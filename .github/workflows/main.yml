@@ -1,0 +1,28 @@
+name: First Workflow
+
+on:
+  pull_request:
+    types: [opened,synchronize]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print build
+        run: echo 'Build job started for pull request'
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Print test - Chrome
+        run: echo 'Running tests on Chrome'
+      - name: Print test - Edge  
+        run: echo 'Running tests on Edge'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy
+        run: echo 'Deploy job triggered for pull request'
+      - name: Print deploy again
+        run: echo 'Deploy step completed'
