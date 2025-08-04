@@ -9,43 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print build
-        run: echo 'build'
-       
+        run: echo 'Build job started for pull request'
+
   test:
     runs-on: windows-latest
     steps:
       - name: Print test - Chrome
-        run: echo 'test chrome'
+        run: echo 'Running tests on Chrome'
       - name: Print test - Edge  
-        run: echo 'test-edge'
-         
+        run: echo 'Running tests on Edge'
+
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Print deploy
-        run: echo 'deploy'
-
+        run: echo 'Deploy job triggered for pull request'
       - name: Print deploy again
-        run: echo 'deploy'
-
-      - name: Comment on Pull Request
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "🚀 Deployment steps triggered for this pull request!"
-            })
-
-
-
-
-
-
-
-
-
- 
+        run: echo 'Deploy step completed'
