@@ -1,28 +1,32 @@
 name: First Workflow
 
-on: [push,pull_request,pull_request_review]
+on: [push, pull_request, pull_request_review]
 
 jobs: 
   build:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Print build
-         run: echo 'build'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print forked repo info
+        run: echo 'This workflow is running from a forked repository'
+      - name: Print build
+        run: echo 'build'
        
   test:
-     runs-on: windows-latest
-     steps:
-       - name: Print test -Chrome
-         run:  echo 'test chrome'
-       - name: Print test -edge  
-         run: echo 'test-edge'
+    runs-on: windows-latest
+    steps:
+      - name: Print forked repo info
+        run: echo 'This workflow is running from a forked repository'
+      - name: Print test -Chrome
+        run: echo 'test chrome'
+      - name: Print test -edge  
+        run: echo 'test-edge'
          
   deploy:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Print deploy
-         run: echo 'deploy'
-         
-       - name: Print deploy
-         run:  echo 'deploy'
- 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print forked repo info
+        run: echo 'This workflow is running from a forked repository'
+      - name: Print deploy
+        run: echo 'deploy'
+      - name: Print deploy
+        run: echo 'deploy'
