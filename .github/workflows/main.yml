@@ -6,16 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print forked repo info
-        run: echo 'This workflow is running from a forked repository'
       - name: Print build
         run: echo 'build'
        
   test:
     runs-on: windows-latest
     steps:
-      - name: Print forked repo info
-        run: echo 'This workflow is running from a forked repository'
       - name: Print test -Chrome
         run: echo 'test chrome'
       - name: Print test -edge  
@@ -24,8 +20,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Print forked repo info
-        run: echo 'This workflow is running from a forked repository'
       - name: Print deploy
         run: echo 'deploy'
       - name: Print deploy
