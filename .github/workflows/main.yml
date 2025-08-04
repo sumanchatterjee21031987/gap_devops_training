@@ -6,7 +6,7 @@ jobs:
   build:
      runs-on: ubuntu-latest
      steps:
-       - name: Print buld
+       - name: Print build
          run: echo 'build'
        
   test:
