@@ -1,0 +1,24 @@
+name: Pull Request Review Workflow
+
+on: pull_request_review
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build triggered by PR review
+        run: echo 'Rebuilding code after review feedback...'
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Re-run Chrome tests after review
+        run: echo 'Re-running Chrome tests based on review...'
+      - name: Re-run Edge tests after review
+        run: echo 'Re-running Edge tests based on review...'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy updated PR after review
+        run: echo 'Deploying reviewed pull request changes...'
