@@ -1,0 +1,23 @@
+name: Monitor Workflow Changes
+
+on:
+  push:
+    paths:
+      - '.github/workflows/**'  # Triggers on any change inside this folder
+
+jobs:
+  log-changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Show commit details
+        run: |
+          echo "🔍 Workflow file changed!"
+          echo "🧑 Modified by: ${{ github.actor }}"
+          echo "📅 Commit time: $(git log -1 --format=%cd)"
+          echo "📝 Commit message: $(git log -1 --pretty=%B)"
+          echo "📁 Changed files:"
+          git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
