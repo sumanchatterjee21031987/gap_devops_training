@@ -1,0 +1,24 @@
+# .github/workflows/branch-filter.yml
+name: Branch Filter Check
+
+on:
+  push:
+    branches:
+      - main  # Only trigger on pushes to 'main'
+
+jobs:
+  check-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Confirm branch event
+        run: |
+          echo "✅ GitHub event fired on branch: ${{ github.ref }}"
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "🚀 This is the main branch. Proceeding with workflow..."
+          else
+            echo "⚠️ Not the main branch. Skipping steps..."
+            exit 1
+          fi
