@@ -19,5 +19,5 @@ jobs:
           echo "🧑 Modified by: ${{ github.actor }}"
           echo "📅 Commit time: $(git log -1 --format=%cd)"
           echo "📝 Commit message: $(git log -1 --pretty=%B)"
-          echo "📁 Changed files:"
+          echo "📁 Changed files: "
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
