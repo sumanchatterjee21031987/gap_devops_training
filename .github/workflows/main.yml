@@ -1,8 +1,8 @@
-name: First Workflow
+name: Second Workflow for Pull request Open and Synchronized
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened,synchronize]
 
 jobs: 
   build:

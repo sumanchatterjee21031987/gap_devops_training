@@ -1,0 +1,24 @@
+name: Push Workflow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build triggered by code push
+        run: echo 'Code pushed to repository. Starting build...'
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Run Chrome tests after push
+        run: echo 'Running Chrome tests for pushed code...'
+      - name: Run Edge tests after push
+        run: echo 'Running Edge tests for pushed code...'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy after push
+        run: echo 'Deploying latest pushed code to staging...'

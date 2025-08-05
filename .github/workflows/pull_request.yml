@@ -1,0 +1,25 @@
+name: Pull Request Workflow
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build for pull request
+        run: echo 'Building code for pull request validation...'
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Run Chrome tests for PR
+        run: echo 'Running Chrome tests for pull request...'
+      - name: Run Edge tests for PR
+        run: echo 'Running Edge tests for pull request...'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy preview for PR
+        run: echo 'Deploying pull request preview environment...'
+

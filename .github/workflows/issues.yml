@@ -1,0 +1,24 @@
+name: Issue Workflow
+
+on: issues
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build triggered by issue activity
+        run: echo 'Issue reported. Initiating build for investigation...'
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Run Chrome tests for issue
+        run: echo 'Running Chrome tests to reproduce issue...'
+      - name: Run Edge tests for issue
+        run: echo 'Running Edge tests to reproduce issue...'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy fix for issue
+        run: echo 'Deploying potential fix for reported issue...'
