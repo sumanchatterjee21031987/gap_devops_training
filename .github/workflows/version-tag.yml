@@ -1,0 +1,24 @@
+name: Trigger on Version Tag
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Matches tags like v1.0.0, v2.3.4, etc.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js (or any other environment)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run build
+        run: |
+          echo "Running build for version tag ${{ github.ref }}"
+          # Add your build/test/deploy commands here
