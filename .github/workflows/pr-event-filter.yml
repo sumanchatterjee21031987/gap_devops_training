@@ -1,0 +1,25 @@
+name: PR Event Filter with Metadata
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - labeled
+      - unlabeled
+      - assigned
+      - unassigned
+      - synchronize
+
+jobs:
+  pr-event-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display PR Metadata
+        run: |
+          echo "🔔 PR Event Triggered: ${{ github.event.action }}"
+          echo "👤 PR Author: ${{ github.event.pull_request.user.login }}"
+          echo "📅 PR Created At: ${{ github.event.pull_request.created_at }}"
