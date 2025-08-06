@@ -1,0 +1,14 @@
+name: node js setup
+
+on:
+  workflow_dispatch
+
+jobs:
+  node-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version: 24
+      - run: node --v
