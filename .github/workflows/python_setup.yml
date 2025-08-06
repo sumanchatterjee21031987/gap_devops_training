@@ -1,0 +1,16 @@
+name: python setup
+
+on:
+  workflow_dispatch
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'  # You can change this to any version you need
+
+      - name: Check Python Version
+        run: python --version
