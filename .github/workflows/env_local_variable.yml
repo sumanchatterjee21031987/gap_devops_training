@@ -1,0 +1,19 @@
+name: env local variable
+
+on:
+  workflow_dispatch
+  
+env:
+ MY_LOCAL_VAR: workflow
+jobs:
+ variables:
+  env:
+   MY_LOCAL_VAR: Hello jobs
+  runs-on: ubuntu-latest
+  steps:
+  - name: Print
+    run: echo '${{env.MY_LOCAL_VAR}}'
+    env:
+     MY_LOCAL_VAR: Hello Steps 
+  
+ 
