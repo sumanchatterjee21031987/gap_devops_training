@@ -1,0 +1,20 @@
+name: Var Global Variable
+
+on:
+  workflow_dispatch
+
+env:
+  MY_LOCAL_VAR: workflow  # Global level
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+    env:
+      MY_LOCAL_VAR: Hello jobs  # Job level
+    steps:
+      - name: Print
+        run: |
+          echo "Step level: $MY_LOCAL_VAR"
+          echo "Global level: $MY_GLOBAL_VAR"
+        env:
+          MY_LOCAL_VAR: Hello Steps  # Step level
