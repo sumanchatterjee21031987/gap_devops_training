@@ -19,7 +19,7 @@ jobs:
           echo "Run Number: ${{ github.run_number }}"
          
       - name: Example
-        if: github.ref == 'refs/head/main'
+        if: github.ref == 'refs/heads/main'
         run: echo 'deploy'
       - name: Trigger on pull request
         if: github.event_name == 'pull_request'
