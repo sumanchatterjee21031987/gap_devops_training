@@ -1,0 +1,25 @@
+name: Variable Usage Example
+
+on:
+  workflow_dispatch
+
+env:
+  GREETING: "Hello from workflow"
+
+jobs:
+  example-job:
+    name: Variable Scope Demo
+    runs-on: ubuntu-latest
+    env:
+      GREETING: "Hello from job"
+    steps:
+      - name: Print workflow/job-level GREETING
+        run: echo "${{ env.GREETING }}"
+
+      - name: Override GREETING at step level
+        env:
+          GREETING: "Hello from step"
+        run: echo "${{ env.GREETING }}"
+
+      - name: Back to job-level GREETING
+        run: echo "${{ env.GREETING }}"
