@@ -11,4 +11,4 @@ jobs:
         uses: actions/setup-node@v4.3.0
         with:
           node-version: 24
-      - run: node --v
+      - run: node -v
