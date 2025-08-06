@@ -1,0 +1,19 @@
+name: github context
+
+on:
+  workflow_dispatch
+
+jobs:
+  github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub context info
+        run: |
+          echo "Repository Details: ${{ github.repository }}"
+          echo "Repository ID: ${{ github.repository_id }}"
+          echo "Repository URL: ${{ github.repository_url }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Reference Details: ${{ github.ref }}"
+          echo "Trigger Event: ${{ github.event_name }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
