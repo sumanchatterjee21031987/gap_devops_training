@@ -1,4 +1,4 @@
-name: variable
+name: variable execution
 
 on:
   workflow_dispatch
