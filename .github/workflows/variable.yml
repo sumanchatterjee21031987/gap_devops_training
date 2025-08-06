@@ -3,16 +3,24 @@ name: variable
 on:
   workflow_dispatch
 
-env: 
-  MY_VAR: workflow  # Workflow-level env
+env:
+  MY_VAR: workflow
 
 jobs:
   variables:
-    env:
-      MY_VAR: jobs  # Job-level env
-    runs-on: ubuntu_latest
+    env: 
+      MY_VAR: jobs
+    runs-on: ubuntu-latest
     steps:
-      - name: Print
-        run: echo '${{env.MY_VAR}}'
+      - name: Print workflow-level
+        run: echo "Workflow-level:${{ env.MY_VAR }}"
+
+      - name: Print job-level
         env:
-          MY_VAR: steps  # Step-level env
+          MY_VAR: jobs
+        run: echo "Job-level:${{ env.MY_VAR }}"
+
+      - name: Print step-level
+        env:
+          MY_VAR: steps
+        run: echo "Step-level: ${{ env.MY_VAR }}"
