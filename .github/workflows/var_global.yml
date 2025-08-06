@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Print
         run: |
-          echo "Step level: ${{MY_LOCAL_VAR}}"
-          echo "Global level: ${{MY_GLOBAL_VAR}}"
+          echo "Step level: ${{env.MY_LOCAL_VAR}}"
+          echo "Global level: ${{var.MY_GLOBAL_VAR}}"
         env:
           MY_LOCAL_VAR: Hello Steps  # Step level
