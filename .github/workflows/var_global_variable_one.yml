@@ -14,6 +14,6 @@ jobs:
   - name: Print
     run: 
      echo '${{env.MY_LOCAL_VAR}}'
-     echo '${{env.MY_GLOBAL_VAR}}'
+     echo '${{var.MY_GLOBAL_VAR}}'
     env:
      MY_LOCAL_VAR: Hello Steps
