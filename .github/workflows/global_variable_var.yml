@@ -1,4 +1,4 @@
-name: Global Variable using var  # 👈 This sets the display name in GitHub Actions
+name: Global Variable
 
 on:
   workflow_dispatch
