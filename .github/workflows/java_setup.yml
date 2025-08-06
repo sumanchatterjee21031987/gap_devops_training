@@ -1,1 +1,16 @@
+name: java setup
 
+on:
+  workflow_dispatch
+jobs:
+  java-setup:
+    runs-on: ubuntu_latest
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.6.0
+        with:
+          java-version: '17'
+          distributtion: oracle
+      - name: Setup Java JDK
+        run:  echo java --version
+     
