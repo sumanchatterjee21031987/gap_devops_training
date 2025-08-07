@@ -1,14 +1,10 @@
-name: outputs
-
 on: workflow_dispatch
 
 jobs:
- outputs:
-   runs-on: ubuntu-latest
-   outputs: ${{steps.set-message.output.greetings}}
-   steps:
-    - id: set-message
-      run: echo 'greeting=hello all' >> $GITHUB_OUTPUT
-      
-    
-
+  example-job:
+    runs-on: ubuntu-latest
+    outputs:
+      greetings: ${{ steps.set-message.outputs.greetings }}
+    steps:
+      - id: set-message
+        run: echo "greetings=hello all" >> $GITHUB_OUTPUT
