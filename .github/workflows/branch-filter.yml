@@ -19,6 +19,6 @@ jobs:
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "🚀 This is the main branch. Proceeding with workflow..."
           else
-            echo "⚠️ Not the main branch. Skipping steps..."
+            echo "⚠️ Not the main branch. Skipping steps...."
             exit 1
           fi
