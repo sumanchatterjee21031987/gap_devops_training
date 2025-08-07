@@ -9,7 +9,7 @@ jobs:
      matrix:
        os:
        - ubuntu-latest
-       - window-latest
+       - windows-latest
        java-version: [17,21]
    steps:
      - name: Setup Java JDK
