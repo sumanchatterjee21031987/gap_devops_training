@@ -16,7 +16,7 @@ jobs:
        uses: actions/setup-java@v4.6.0
        with:
         java-version: ${{matrix.java-version}}
-        distribution: microsoft
+        distribution: temurin
      
         
     
