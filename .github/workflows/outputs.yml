@@ -8,3 +8,4 @@ jobs:
     steps:
       - id: set-message
         run: echo "greetings=hello all" >> $GITHUB_OUTPUT
+        
